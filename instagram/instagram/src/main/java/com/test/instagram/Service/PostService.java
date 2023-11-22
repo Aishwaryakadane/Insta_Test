@@ -21,6 +21,7 @@ public class PostService {
         postRepository.save(post);
     }
 
+    //list of post
     public List<Post> getAllPosts(String token) {
         User user = tokenRepository.findFirstByToken(token).getUser();
         List<Post> posts = postRepository.findByUser(user);
